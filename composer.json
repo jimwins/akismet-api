@@ -1,0 +1,30 @@
+{
+  "name": "jimwins/akismet-api",
+  "type": "library",
+  "license": "MIT",
+  "description": "Library for accessing the Akismet API without any framework dependencies.",
+
+  "authors":[
+    {
+      "name": "Jim Winstead Jr.",
+      "email": "jimw@trainedmonkey.com"
+    }
+  ],
+      
+  "require": {
+    "php": ">= 7.0",
+    "psr/http-message": "^2.0",
+    "guzzlehttp/guzzle": "^7.0"
+  },
+
+  "require-dev": {
+    "phpunit/phpunit": "^10.0",
+    "phpstan/phpstan": "^1.10"
+  },
+          
+  "autoload":  {
+    "psr-4": {
+      "Akismet\\": "src/"
+    }
+  }
+}

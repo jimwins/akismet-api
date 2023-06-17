@@ -1,0 +1,6 @@
+._*
+.DS*
+.phpunit.result.cache
+composer.lock
+vendor
+tests/coverage-report
