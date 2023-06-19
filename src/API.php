@@ -99,9 +99,7 @@ class API
     $exclude= '/^(HTTP_COOKIE)/';
     foreach ($request->getServerParams() as $key => $value) {
       if (is_string($value) && preg_match($include, $key) && !preg_match($exclude, $key)) {
-        $values[$key]= $value;
-      } else {
-        $values[$key]= "";
+        $values[$key] = $value;
       }
     }
 
