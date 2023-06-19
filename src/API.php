@@ -94,10 +94,11 @@ class API
       }
     }
 
-    /* And SERVER variables, except for a few */
-    $ignore = [ 'HTTP_COOKIE', 'HTTP_COOKIE2', 'PHP_AUTH_PW' ];
+    /* And SERVER vars that are useful and probably not dangerous */
+    $include= '/^(HTTP_|REMOTE_ADDR|REQUEST_URI|DOCUMENT_URI)/';
+    $exclude= '/^(HTTP_COOKIE)/';
     foreach ($request->getServerParams() as $key => $value) {
-      if (in_array($key, $ignore) && is_string($value)) {
+      if (is_string($value) && preg_match($include, $key) && !preg_match($exclude, $key)) {
         $values[$key]= $value;
       } else {
         $values[$key]= "";
